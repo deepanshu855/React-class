@@ -1,0 +1,58 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html, body{
+  height: 100%;
+  width: 100%;
+}
+
+#root{
+  height: 100%;
+  width: 100%;
+  background-color: #1e1e1e;
+  color: white;
+  padding: 40px;
+}
+
+h1{
+  font-size: 80px;
+  font-weight: 600;
+}
+
+button{
+  padding: 20px 30px;
+  font-size: 50px;
+  background-color: rgb(31, 168, 168);
+  color: white;
+  border-radius: 12px;
+}
+
+button:active{
+  scale: 0.9;
+}
+
+.wash{
+  height: 450px;
+  width: 450px;
+  border-radius: 12px;
+  background-color: grey;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 100px;
+}
+
+.Male{
+  background-color: rgb(246, 182, 72);
+}
+
+.Female{
+  background-color: rgb(225, 148, 161);
+}
+
+.Other{
+  background: conic-gradient(blue, red, violet, yellow, orange, indigo, blue);
+}
