@@ -17,6 +17,12 @@ const App = () => {
     setEmail("");
   };
 
+  const deleteHandler= (idx)=> {
+    const copy= [...allUser];
+    copy.splice(idx, 1);
+    setAllUser(copy);
+  }
+
   return (
     <div className="h-screen w-screen bg-black text-white p-16">
       <form
@@ -36,7 +42,7 @@ const App = () => {
           }}
         />
         <input
-          type="email"
+          type="text"
           className="p-4 text-white rounded-xl border-2 w-94"
           placeholder="Enter email"
           required
@@ -51,8 +57,8 @@ const App = () => {
       </form>
 
       <h1>
-        {allUser.map((elem) => {
-          return <Card name={elem.name} email={elem.email}/>
+        {allUser.map((elem, idx) => {
+          return <Card name={elem.name} email={elem.email} idx={idx} deleteHandler={deleteHandler}/>
         })}
       </h1>
     </div>
