@@ -2,26 +2,30 @@ import React, { useState } from "react";
 import Card from "./components/Card";
 
 const App = () => {
+  const data = localStorage.getItem("all-user");
+  const localData = data ? JSON.parse(data) : [];
+
   let [name, setName] = useState("");
   let [email, setEmail] = useState("");
-  let [allUser, setAllUser] = useState([]);
+  let [allUser, setAllUser] = useState(localData);
 
   const submitHandler = (e) => {
     e.preventDefault();
 
-    // let newUser= [...allUser]
-    // newUser.push({name, email})
-    let newUser = [...allUser, { name, email }];
+    let newUser = [...allUser];
+    newUser.push({ name, email });
     setAllUser(newUser);
+    localStorage.setItem("all-user", JSON.stringify(newUser));
     setName("");
     setEmail("");
   };
 
-  const deleteHandler= (idx)=> {
-    const copy= [...allUser];
+  const deleteHandler = (idx) => {
+    const copy = [...allUser];
     copy.splice(idx, 1);
     setAllUser(copy);
-  }
+    localStorage.setItem("all-user", JSON.stringify(copy));
+  };
 
   return (
     <div className="h-screen w-screen bg-black text-white p-16">
@@ -58,7 +62,14 @@ const App = () => {
 
       <h1>
         {allUser.map((elem, idx) => {
-          return <Card name={elem.name} email={elem.email} idx={idx} deleteHandler={deleteHandler}/>
+          return (
+            <Card
+              name={elem.name}
+              email={elem.email}
+              idx={idx}
+              deleteHandler={deleteHandler}
+            />
+          );
         })}
       </h1>
     </div>
