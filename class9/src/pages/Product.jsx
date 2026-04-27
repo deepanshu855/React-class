@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink, Outlet } from "react-router-dom";
 
 const Product = () => {
   return (
@@ -7,14 +7,26 @@ const Product = () => {
       <h1 className="text-3xl mb-2 underline flex top-0 left-1/2 translate-x-1/2">
         Product Page
       </h1>
-      <div className="flex flex-col">
-        <Link className="text-3xl underline" to="/product/men">
+      <div className="flex justify-around gap-2 mb-4">
+        <NavLink
+          className={({ isActive }) =>
+            `text-3xl m-2 ${isActive ? "text-yellow-400" : "text-white"}`
+          }
+          to="/product/men"
+        >
           Men's Collection
-        </Link>
-        <Link className="text-3xl underline" to="/product/women">
+        </NavLink>
+        <NavLink
+          className={({ isActive }) =>
+            `text-3xl m-2 ${isActive ? "text-yellow-400" : "text-white"}`
+          }
+          to="/product/men"
+        >
           Women's Collection
-        </Link>
+        </NavLink>
       </div>
+
+      <Outlet />
     </div>
   );
 };

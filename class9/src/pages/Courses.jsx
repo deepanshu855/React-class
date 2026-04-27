@@ -1,9 +1,19 @@
 import React from 'react'
+import { Outlet } from 'react-router-dom'
 
 const Courses = () => {
   return (
     <div>
-        <h1 className='text-3xl underline flex top-0 left-1/2 translate-x-1/2'>Courses Page</h1>
+        <div className='h-fit w-full bg-amber-400 text-white flex justify-evenly gap-2 mb-2'>
+          <p className='text-3xl shrink-0'>Sale is Live!!!</p>
+          <p className='text-3xl shrink-0'>Sale is Live!!!</p>
+          <p className='text-3xl shrink-0'>Sale is Live!!!</p>
+          <p className='text-3xl shrink-0'>Sale is Live!!!</p>
+          <p className='text-3xl shrink-0'>Sale is Live!!!</p>
+          <p className='text-3xl shrink-0'>Sale is Live!!!</p>
+        </div>
+
+        <Outlet/>
     </div>
   )
 }
