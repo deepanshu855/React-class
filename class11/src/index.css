@@ -15,7 +15,7 @@ html, body{
   height: 100px;
   background-color: crimson;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
 }
 
@@ -41,4 +41,13 @@ h1{
   justify-content: center;
   align-items: center;
   padding: 20px;
+}
+
+button{
+  padding: 4px;
+  background-color: royalblue;
+  color: white;
+  border-radius: 10px;
+  font-size: 40px;
+  cursor: pointer;
 }
